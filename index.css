@@ -1,0 +1,155 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.png');
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.overlay-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.slide-container {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.slide-item {
+    flex: 0 0 30%;
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.heart {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff4d4d; /* Heart color */
+    border-radius: 50%;
+    animation: shower 1s linear;
+}
+
+@keyframes shower {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.flower {
+    position: absolute;
+    font-size: 24px; /* Adjust the size as needed */
+    animation: shower 1s linear;
+} 
+
+@keyframes flower {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.gun-flower {
+    position: absolute;
+    font-size: 24px; /* Adjust the size as needed */
+    animation: shower-from-gun 1s linear;
+    bottom: -50px; /* Adjust as needed */
+}
+
+@keyframes shower-from-gun {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.shower-button {
+    background-color: transparent;
+    border: none;
+    color: #ff4d4d; /* Heart color */
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    z-index: 0;
+}
+
+.shower-button::before {
+    content: '\2665'; /* Unicode heart symbol */
+    display: block;
+    font-size: 24px;
+    margin-right: 5px;
+    transform: rotate(-45deg);
+}
+
+.gun {
+    position: fixed;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #333; /* Gun color */
+    border-radius: 50%;
+    z-index: 1; /* Ensure gun appears above other elements */
+}
+
+.left-gun {
+    left: 20px;
+}
+
+.right-gun {
+    right: 20px;
+}
+
+
+
